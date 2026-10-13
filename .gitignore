@@ -1,0 +1,11 @@
+# --- MATLAB job runner (lab PC) ---
+# All outputs go under results/ (the lab PC's runner stops if MATLAB writes into git-tracked folders)
+/results/
+# Syncthing files on the lab PC
+/.stignore
+/.stfolder/
+/.stversions/
+# MATLAB autosave
+*.asv
+# per-PC settings of the runner (MATLAB path); see lab/config.example.json
+/lab/config.json
