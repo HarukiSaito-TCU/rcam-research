@@ -9,3 +9,7 @@
 *.asv
 # per-PC settings of the runner (MATLAB path); see lab/config.example.json
 /lab/config.json
+# Simulink caches and autosave (the lab runner also points the cache to JOB_OUT)
+slprj/
+*.slxc
+*.autosave

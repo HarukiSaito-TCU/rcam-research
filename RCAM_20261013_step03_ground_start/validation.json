@@ -1,0 +1,10 @@
+{
+  "step02_unchanged": true,
+  "changed_model_entries": [
+    "simulink/systems/system_21.xml"
+  ],
+  "only_behavior_change": "Initial body-forward velocity u: 77.0814 -> 0 m/s",
+  "dependencies_identical_to_step02": true,
+  "all_xml_parse": true,
+  "matlab_execution": "Not executed; user verification pending."
+}

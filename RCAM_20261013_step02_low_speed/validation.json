@@ -1,0 +1,79 @@
+{
+  "step01_unchanged": true,
+  "changed_model_entries": [
+    "simulink/systems/system_21.xml"
+  ],
+  "numeric_denominator_checks": [
+    {
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "Va": 0.0,
+      "beta": 0.0,
+      "finite": true
+    },
+    {
+      "velocity": [
+        1e-12,
+        0,
+        0
+      ],
+      "Va": 1e-12,
+      "beta": 0.0,
+      "finite": true
+    },
+    {
+      "velocity": [
+        0,
+        1e-12,
+        0
+      ],
+      "Va": 1e-12,
+      "beta": 2e-12,
+      "finite": true
+    },
+    {
+      "velocity": [
+        0,
+        0,
+        1e-12
+      ],
+      "Va": 1e-12,
+      "beta": 0.0,
+      "finite": true
+    },
+    {
+      "velocity": [
+        0.3,
+        0.4,
+        0
+      ],
+      "Va": 0.5,
+      "beta": 0.9272952180016123,
+      "finite": true
+    },
+    {
+      "velocity": [
+        77.0814,
+        0,
+        0
+      ],
+      "Va": 77.0814,
+      "beta": 0.0,
+      "finite": true
+    },
+    {
+      "velocity": [
+        85,
+        0,
+        0
+      ],
+      "Va": 85.0,
+      "beta": 0.0,
+      "finite": true
+    }
+  ],
+  "matlab_checks": "Provided in prepare_step02.m; not executed (previous MATLAB startup error 5201)."
+}

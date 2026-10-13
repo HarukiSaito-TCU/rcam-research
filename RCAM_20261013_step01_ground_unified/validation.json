@@ -1,0 +1,14 @@
+{
+  "source_sha256": {
+    "C:\\Users\\rukky\\OneDrive - 東京都市大学 Tokyo City University\\Matlabcode\\Master\\RCAM_PID_takeoff_lamding_20261009A.slx": "b887a65521206cf26a95b0d337068dc7426f48289c0049d25ec9b9c3bc8b9789",
+    "C:\\Users\\rukky\\OneDrive - 東京都市大学 Tokyo City University\\Matlabcode\\Master\\RCAM_dynamics_fcn20261009_brake.m": "29e424754958cb33ae78101da7f4c5454884819c30caa2072702b5f0446c0ad5",
+    "C:\\Users\\rukky\\OneDrive - 東京都市大学 Tokyo City University\\Matlabcode\\Master\\RCAM_monitor.m": "2a70e979339651bdd6a3af6d0be192be1516cd4851c7e1057a99ceefbd922bea"
+  },
+  "changed_zip_entries": [
+    "simulink/systems/system_21.xml"
+  ],
+  "new_model": "C:\\Users\\rukky\\Documents\\Codex\\2026-09-18\\rcam\\outputs\\RCAM_20261013_step01_ground_unified\\RCAM_PID_takeoff_lamding_20261013_step01.slx",
+  "dynamics_snapshot_sha256": "29e424754958cb33ae78101da7f4c5454884819c30caa2072702b5f0446c0ad5",
+  "originals_unchanged": true,
+  "matlab_execution": "Not completed: MATLAB startup failed with MathWorks service communication error 5201. No model update or simulation executed."
+}
