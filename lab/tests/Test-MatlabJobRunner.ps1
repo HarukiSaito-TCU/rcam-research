@@ -352,6 +352,9 @@ try {
         Write-Host $txt
         Check 'maxNumCompThreads = 6 inside the job' ($txt -match '(?m)^threads=6\r?$')
         Check 'MATLAB_MAX_WORKERS = 6 inside the job' ($txt -match '(?m)^max_workers=6\r?$')
+        Check 'Simulink cache folder = JOB_OUT\slprj' ($txt.Contains("cache=$Lab\results\jobs\20260201_real_ok\slprj"))
+        Check 'a Simulink model was simulated' ($txt -match '(?m)^sim=ok 1\r?$')
+        Check 'no slprj/.slxc in the git-tracked folders' (@(Get-ChildItem $Lab -Recurse -Force -Include slprj, *.slxc -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notlike "$Lab\results\*" }).Count -eq 0)
         Check 'string var arrives unchanged (quotes, %, ^, !, Japanese)' ($txt.Contains("tag=$tricky"))
         Check 'number array var' ($txt -match '(?m)^list=0\.8 1 1\.2\r?$')
         Check 'logical var' ($txt -match '(?m)^flag=1 logical\r?$')

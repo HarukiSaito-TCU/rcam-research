@@ -16,6 +16,7 @@
 - `vars`（任意）：`run` の前にMATLABの変数として代入されます。使える値は、数、文字列（改行なし）、`true`/`false`、数の配列だけです。変数名は `^[A-Za-z][A-Za-z0-9_]*$` に合うもの。`JOB_ID` と `JOB_OUT` は予約されています。
 - entry は `run` で実行されるので、実行中の現在のフォルダは entry のあるフォルダになります（MATLABの `run` の仕様）。repoのルートは `JOB_OUT` の3つ上のフォルダ（`fileparts(fileparts(fileparts(JOB_OUT)))`）です。
 - 出力は必ず `JOB_OUT`（`results/jobs/<id>/`）の下に書いてください。git管理下のフォルダにファイルを書くと、研究室PCのrunnerはpullも新しいジョブの起動もしなくなります。
+- Simulinkのキャッシュ（`slprj/`、`*.slxc`）は、runnerが `JOB_OUT/slprj` に向けます。ただし、研究コードが自分で `save` / `save_system` / `writetable` する先は、`JOB_OUT` の下にしてください。
 - MATLABは、計算スレッドが6まで（`maxNumCompThreads(6)`）、並列ワーカーが6まで（環境変数 `MATLAB_MAX_WORKERS=6`）、優先度「通常以下」で動きます。メモリは約20 GB までにしてください。
 
 ## 結果

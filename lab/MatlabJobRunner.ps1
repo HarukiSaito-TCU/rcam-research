@@ -275,6 +275,8 @@ function New-JobMainCode($Check, [string]$Root, [string]$JobOut) {
         "maxNumCompThreads($($script:MaxThreads));"
         "cd($(Get-MatlabQuoted $Root));"
         "JOB_ID = $(Get-MatlabQuoted $Check.Id); JOB_OUT = $(Get-MatlabQuoted $JobOut);"
+        '% Simulink caches (slprj/, *.slxc) go under JOB_OUT, not into git-tracked folders'
+        "try, Simulink.fileGenControl('set', 'CacheFolder', fullfile(JOB_OUT, 'slprj'), 'CodeGenFolder', fullfile(JOB_OUT, 'slprj'), 'createDir', true); catch, end"
     ) + $Check.VarLines + @("run($(Get-MatlabQuoted $Check.EntryFull));")
     ($l -join "`r`n") + "`r`n"
 }
