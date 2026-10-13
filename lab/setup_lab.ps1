@@ -1,8 +1,8 @@
 <#
  One-time setup of the lab PC, as far as it can be automated. Run on the lab PC as user kiriki, AFTER the repo was
- cloned with the deploy key (docs\lab_setup.md, step 1):
+ cloned with the deploy key (docs\lab_setup.md, section 2):
    powershell -NoProfile -ExecutionPolicy Bypass -File C:\work\<repo>\lab\setup_lab.ps1 [-MatlabExe <path>]
-   ... -Snapshot      only record the state of the existing research (before/after comparison, docs step 7)
+   ... -Snapshot      only record the state of the existing research (before/after comparison, docs section 5)
 
  Steps (stops at the first NG with what to do):
    1 repo: ASCII path, not OneDrive, results/ ignored, core.sshCommand (repo-local) set, read access to GitHub
@@ -99,7 +99,7 @@ $ign = Invoke-Native 'git' @('-C', $Root, 'check-ignore', '-q', 'results/x')
 if ($ign.Code -ne 0) { NG 'results/ is not git-ignored' 'the senpai must add /results/ to .gitignore and push' }
 $ssh = Invoke-Native 'git' @('-C', $Root, 'config', '--local', '--get', 'core.sshCommand')
 if (-not $ssh.Output) {
-    if (-not (Test-Path $KeyPath)) { NG "deploy key $KeyPath not found" 'do docs\lab_setup.md step 1 first' }
+    if (-not (Test-Path $KeyPath)) { NG "deploy key $KeyPath not found" 'do docs\lab_setup.md section 2 first' }
     $sshCmd = 'ssh -i "{0}" -o IdentitiesOnly=yes -o BatchMode=yes' -f ($KeyPath -replace '\\', '/')
     [void](Invoke-Native 'git' @('-C', $Root, 'config', '--local', 'core.sshCommand', $sshCmd))
     Out-Report "set repo-local core.sshCommand = $sshCmd"
@@ -159,4 +159,4 @@ else {
     OK 'task MatlabJobRunner registered'
 }
 
-Out-Report 'DONE. Next (by hand): Syncthing GUI steps and the checks in docs\lab_setup.md (steps 6-7).'
+Out-Report 'DONE. Next (by hand): Syncthing GUI steps and the checks in docs\lab_setup.md (sections 4-5).'
